@@ -94,7 +94,7 @@ class AppChart extends React.Component {
   }
 
   async componentDidMount() {
-    const response = await fetch(Constant.BASE_API + '/pkg?action=all&offset=0&count=10&id=all') // get list app
+    const response = await fetch(Constant.BASE_API + '/autoComplete?keyword=zalo') // get list app
     const json = await response.json();
 
     Promise.all(
