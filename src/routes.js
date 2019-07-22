@@ -14,14 +14,15 @@ import Tables from "./views/Tables";
 import BlogPosts from "./views/BlogPosts";
 
 export default [
+  // {
+  //   path: "/",
+  //   exact: true,
+  //   layout: DefaultLayout,
+  //   component: () => <Redirect to="/blog-overview" />
+  // },
   {
     path: "/",
     exact: true,
-    layout: DefaultLayout,
-    component: () => <Redirect to="/blog-overview" />
-  },
-  {
-    path: "/blog-overview",
     layout: DefaultLayout,
     component: BlogOverview
   },
