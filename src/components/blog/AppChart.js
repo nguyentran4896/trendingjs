@@ -3,8 +3,7 @@ import PropTypes from "prop-types";
 import { Row, Col, Card, CardHeader, CardBody, Button } from "shards-react";
 
 import RangeDatePicker from "../common/RangeDatePicker";
-import Highcharts from 'highcharts';
-import Constant from '../../Constant';
+// import Highcharts from 'highcharts';
 import HighchartsElement from './HighchartsElement';
 
 const getChartConfig = data => ({

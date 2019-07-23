@@ -21,7 +21,6 @@ import NewDraft from "../components/blog/NewDraft";
 import Discussions from "../components/blog/Discussions";
 import TopReferrals from "../components/common/TopReferrals";
 import Sliders from "../components/components-overview/Sliders";
-import Constant from "../Constant";
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -33,7 +32,7 @@ class HomePage extends React.Component {
   }
 
   async componentDidMount() {
-    const response = await fetch(Constant.BASE_API + '/dailyTrends') // get list app
+    const response = await fetch(process.env.REACT_APP_BASE_API + '/dailyTrends') // get list app
     const json = await response.json();
     console.log('Loaded dailyTrends', json)
 
