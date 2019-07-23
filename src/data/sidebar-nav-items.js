@@ -1,9 +1,9 @@
 export default function() {
   return [
     {
-      title: "Blog Dashboard",
+      title: "HomePage",
       to: "/",
-      htmlBefore: '<i class="material-icons">edit</i>',
+      htmlBefore: '<i class="material-icons">home</i>',
       htmlAfter: ""
     },
     {

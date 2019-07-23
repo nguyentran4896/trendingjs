@@ -4,7 +4,7 @@ import { Row, Col, Card, CardHeader, CardBody, Button } from "shards-react";
 
 import RangeDatePicker from "../common/RangeDatePicker";
 import Highcharts from 'highcharts';
-import Constant from '../common/Constant';
+import Constant from '../../Constant';
 import HighchartsElement from './HighchartsElement';
 
 const getChartConfig = data => ({
