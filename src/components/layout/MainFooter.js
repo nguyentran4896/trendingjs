@@ -39,7 +39,7 @@ MainFooter.propTypes = {
 
 MainFooter.defaultProps = {
   contained: false,
-  copyright: "Copyright © 2018 DesignRevision",
+  copyright: "Copyright © 2019 Nguyen Tran Dinh Khoi",
   menuItems: [
     {
       title: "Home",
@@ -55,10 +55,6 @@ MainFooter.defaultProps = {
     },
     {
       title: "Products",
-      to: "#"
-    },
-    {
-      title: "Blog",
       to: "#"
     }
   ]
