@@ -11,7 +11,7 @@ import {
   Badge,
   Button
 } from "shards-react";
-
+import { withTranslation, Trans } from 'react-i18next';
 import PageTitle from "../components/common/PageTitle";
 
 class BlogPosts extends React.Component {
@@ -341,4 +341,4 @@ class BlogPosts extends React.Component {
   }
 }
 
-export default BlogPosts;
+export default withTranslation('common')(BlogPosts);

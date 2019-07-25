@@ -10,17 +10,12 @@ import Errors from "./views/Errors";
 import BlogPosts from "./views/BlogPosts";
 
 export default [
-  // {
-  //   path: "/",
-  //   exact: true,
-  //   layout: DefaultLayout,
-  //   component: () => <Redirect to="/blog-overview" />
-  // },
   {
     path: "/",
     exact: true,
     layout: DefaultLayout,
     component: HomePage
+    // component: () => <Redirect to="/blog-overview" />
   },
   {
     path: "/errors",

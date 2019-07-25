@@ -1,4 +1,5 @@
 import React from "react";
+import { withTranslation, Trans } from 'react-i18next';
 import {
   Container,
   Row,
@@ -19,6 +20,7 @@ import SDKVerionChart from "../components/blog/SDKVersionChart";
 import UsersByDevice from "../components/blog/UsersByDevice";
 import NewDraft from "../components/blog/NewDraft";
 import Discussions from "../components/blog/Discussions";
+import CountryReports from "../components/common/CountryReports";
 import YouTube from "react-youtube";
 
 class HomePage extends React.Component {
@@ -240,6 +242,10 @@ class HomePage extends React.Component {
           <Col lg="5" md="12" sm="12" className="mb-4">
             <Discussions />
           </Col>
+
+          <Col lg="7" md="12" sm="12" className="mb-4">
+            <CountryReports />
+          </Col>
         </Row>
       </Container>
     )
@@ -383,4 +389,4 @@ const parseYoutubeVideoData = (obj) => ({
   opts
 })
 
-export default HomePage;
+export default withTranslation('common')(HomePage);

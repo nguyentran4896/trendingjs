@@ -1,4 +1,5 @@
 import React from "react";
+import { withTranslation, Trans } from 'react-i18next';
 import { Container, Button } from "shards-react";
 
 const Errors = () => (
@@ -14,4 +15,4 @@ const Errors = () => (
   </Container>
 );
 
-export default Errors;
+export default withTranslation('common')(Errors);
