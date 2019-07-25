@@ -1,14 +1,12 @@
 import React from "react";
-import { withTranslation, Trans } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
 import {
   Container,
   Row,
   Col,
   Card,
-  CardHeader,
   CardBody,
   CardFooter,
-  Alert,
   Badge,
   Button
 } from "shards-react";

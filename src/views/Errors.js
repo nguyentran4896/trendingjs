@@ -1,5 +1,5 @@
 import React from "react";
-import { withTranslation, Trans } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
 import { Container, Button } from "shards-react";
 
 const Errors = () => (
