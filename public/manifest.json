@@ -1,9 +1,9 @@
 {
-  "short_name": "Shards Dashboard Lite React",
-  "name": "Shards Dashboard Lite React",
+  "short_name": "Dutrend",
+  "name": "Du trend",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "favicon.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     }
