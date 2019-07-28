@@ -13,10 +13,6 @@ import {
 
 import PageTitle from "../components/common/PageTitle";
 import SmallStats from "../components/common/SmallStats";
-import AppChart from "../components/blog/AppChart";
-import SDKVerionChart from "../components/blog/SDKVersionChart";
-import UsersByDevice from "../components/blog/UsersByDevice";
-import NewDraft from "../components/blog/NewDraft";
 import Discussions from "../components/blog/Discussions";
 import CountryReports from "../components/common/CountryReports";
 import YouTube from "react-youtube";
@@ -33,45 +29,53 @@ class HomePage extends React.Component {
           backgroundImage: require("../images/loading.gif"),
           category: "Business",
           categoryTheme: "dark",
-          author: "Anna Kunis",
+          author: "...",
           authorAvatar: require("../images/loading.gif"),
-          title: "Conduct at an replied removal an amongst",
+          title: "...",
           body:
-            "However venture pursuit he am mr cordial. Forming musical am hearing studied be luckily. But in for determine what would see...",
-          date: "28 February 2019"
+            "...",
+          date: "..."
         },
         {
           backgroundImage: require("../images/loading.gif"),
           category: "Travel",
           categoryTheme: "info",
-          author: "James Jamerson",
+          author: "...",
           authorAvatar: require("../images/loading.gif"),
-          title: "Off tears are day blind smile alone had ready",
+          title: "...",
           body:
-            "Is at purse tried jokes china ready decay an. Small its shy way had woody downs power. To denoting admitted speaking learning my...",
-          date: "29 February 2019"
+            "...",
+          date: "..."
         },
         {
           backgroundImage: require("../images/loading.gif"),
           category: "Technology",
           categoryTheme: "royal-blue",
-          author: "Jimmy Jackson",
+          author: "...",
           authorAvatar: require("../images/loading.gif"),
-          title: "Difficult in delivered extensive at direction",
-          body:
-            "Is at purse tried jokes china ready decay an. Small its shy way had woody downs power. To denoting admitted speaking learning my...",
-          date: "29 February 2019"
+          title: "...",
+          body: "...",
+          date: "..."
         },
         {
           backgroundImage: require("../images/loading.gif"),
           category: "Business",
           categoryTheme: "warning",
-          author: "John James",
+          author: "...",
           authorAvatar: require("../images/loading.gif"),
-          title: "It so numerous if he may outlived disposal",
-          body:
-            "How but sons mrs lady when. Her especially are unpleasant out alteration continuing unreserved ready road market resolution...",
-          date: "29 February 2019"
+          title: "...",
+          body: "...",
+          date: "..."
+        },
+        {
+          backgroundImage: require("../images/loading.gif"),
+          category: "Business",
+          categoryTheme: "warning",
+          author: "...",
+          authorAvatar: require("../images/loading.gif"),
+          title: "...",
+          body: "...",
+          date: "..."
         }
       ]
     }
@@ -80,7 +84,7 @@ class HomePage extends React.Component {
   async componentDidMount() {
     const response = await fetch(process.env.REACT_APP_BASE_API + '/dailyTrends') // get list app
     const json = await response.json();
-    console.log('Loaded dailyTrends', json)
+    // console.log('Loaded dailyTrends', json)
 
     let topTrends
     if (json.default.trendingSearchesDays.length > 1) {
@@ -92,7 +96,7 @@ class HomePage extends React.Component {
 
     var a = await fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&hl=vi&locale=vn&regionCode=VN&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`)
     const videos = (await a.json()).items.map(e => (parseYoutubeVideoData(e)))
-    console.log(videos)
+    // console.log(videos)
 
     this.setState({
       topTrends: topTrends.map(e => (parseSmallStatData(e))),
@@ -103,11 +107,12 @@ class HomePage extends React.Component {
 
   render() {
     const { topTrends, videos, PostsListOne } = this.state
+    const { t, i18n } = this.props;
     return (
       <Container fluid className="main-content-container px-4">
         {/* Page Header */}
         <Row noGutters className="page-header py-4">
-          <PageTitle title="Google trends" subtitle="" className="text-sm-left mb-3" />
+          <PageTitle title={t('title')} subtitle="" className="text-sm-left mb-3" />
         </Row>
 
         {/* Small Stats Blocks */}
@@ -215,27 +220,6 @@ class HomePage extends React.Component {
         </Row>
 
         <Row>
-          {/* Users Overview */}
-          <Col lg="8" md="12" sm="12" className="mb-4">
-            <AppChart />
-          </Col>
-
-          {/* Users by Device */}
-          <Col lg="4" md="6" sm="12" className="mb-4">
-            <UsersByDevice />
-          </Col>
-        </Row>
-
-        <Row>
-          <Col lg="8" md="12" sm="12" className="mb-4">
-            <SDKVerionChart />
-          </Col>
-
-          {/* New Draft */}
-          <Col lg="4" md="6" sm="12" className="mb-4">
-            <NewDraft />
-          </Col>
-
           {/* Discussions */}
           <Col lg="5" md="12" sm="12" className="mb-4">
             <Discussions />
@@ -252,9 +236,9 @@ class HomePage extends React.Component {
 
 const topTrends = [
   {
-    label: "Posts",
-    value: "2,390",
-    percentage: "4.7%",
+    label: "",
+    value: "",
+    percentage: "",
     increase: true,
     chartLabels: [null, null, null, null, null, null, null],
     attrs: { md: "6", sm: "6" },
@@ -270,9 +254,9 @@ const topTrends = [
     ]
   },
   {
-    label: "Pages",
-    value: "182",
-    percentage: "12.4",
+    label: "",
+    value: "",
+    percentage: "",
     increase: true,
     chartLabels: [null, null, null, null, null, null, null],
     attrs: { md: "6", sm: "6" },
@@ -288,9 +272,9 @@ const topTrends = [
     ]
   },
   {
-    label: "Comments",
-    value: "8,147",
-    percentage: "3.8%",
+    label: "",
+    value: "",
+    percentage: "",
     increase: false,
     decrease: true,
     chartLabels: [null, null, null, null, null, null, null],
@@ -307,9 +291,9 @@ const topTrends = [
     ]
   },
   {
-    label: "New Customers",
-    value: "29",
-    percentage: "2.71%",
+    label: "",
+    value: "",
+    percentage: "",
     increase: false,
     decrease: true,
     chartLabels: [null, null, null, null, null, null, null],
@@ -326,9 +310,9 @@ const topTrends = [
     ]
   },
   {
-    label: "Subscribers",
-    value: "17,281",
-    percentage: "2.4%",
+    label: "",
+    value: "",
+    percentage: "",
     increase: false,
     decrease: true,
     chartLabels: [null, null, null, null, null, null, null],
@@ -387,4 +371,4 @@ const parseYoutubeVideoData = (obj) => ({
   opts
 })
 
-export default withTranslation('common')(HomePage);
+export default withTranslation()(HomePage);
