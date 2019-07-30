@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Row, Col, Card, CardHeader, CardBody, Button } from "shards-react";
 
-import RangeDatePicker from "../common/RangeDatePicker";
+// import RangeDatePicker from "../common/RangeDatePicker";
 import Highcharts from 'highcharts';
 
 class SDKVerionChart extends React.Component {
@@ -106,7 +106,7 @@ class SDKVerionChart extends React.Component {
         <CardBody className="pt-0">
           <Row className="border-bottom py-2 bg-light">
             <Col sm="6" className="d-flex mb-2 mb-sm-0">
-              <RangeDatePicker />
+              {/* <RangeDatePicker /> */}
             </Col>
             <Col>
               <Button

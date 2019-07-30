@@ -11,11 +11,14 @@ import {
   Button
 } from "shards-react";
 
+import { Helmet } from "react-helmet";
+
 import PageTitle from "../components/common/PageTitle";
 import SmallStats from "../components/common/SmallStats";
 import Discussions from "../components/blog/Discussions";
 import CountryReports from "../components/common/CountryReports";
 import YouTube from "react-youtube";
+import loadCss from '../loadCss';
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -82,6 +85,7 @@ class HomePage extends React.Component {
   }
 
   async componentDidMount() {
+    loadCss();
     const response = await fetch(process.env.REACT_APP_BASE_API + '/dailyTrends') // get list app
     const json = await response.json();
     // console.log('Loaded dailyTrends', json)
@@ -107,12 +111,19 @@ class HomePage extends React.Component {
 
   render() {
     const { topTrends, videos, PostsListOne } = this.state
-    const { t, i18n } = this.props;
+    const { t } = this.props;
     return (
       <Container fluid className="main-content-container px-4">
+        <Helmet>
+          <meta name="description" content={t('homepage_description')} />
+          <meta property="og:description" content={t('homepage_description')} />
+          <meta property="og:locale" content="vi_VN" />
+          <meta property="og:locale:alternate" content="en_US" />
+        </Helmet>
+
         {/* Page Header */}
         <Row noGutters className="page-header py-4">
-          <PageTitle title={t('title')} subtitle="" className="text-sm-left mb-3" />
+          <PageTitle title={t('google_trending')} subtitle="" className="text-sm-left mb-3" />
         </Row>
 
         {/* Small Stats Blocks */}
