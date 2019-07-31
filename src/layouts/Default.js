@@ -12,10 +12,10 @@ const DefaultLayout = ({ children, noNavbar, noFooter }) => (
       <MainSidebar />
       <Col
         className="main-content p-0"
-        lg={{ size: 10, offset: 2 }}
-        md={{ size: 9, offset: 3 }}
-        // lg="12"
-        // md="12"
+        // lg={{ size: 10, offset: 2 }}
+        // md={{ size: 9, offset: 3 }}
+        lg="12"
+        md="12"
         sm="12"
         tag="main"
       >

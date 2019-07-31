@@ -98,7 +98,7 @@ class HomePage extends React.Component {
     }
     topTrends = topTrends.splice(0, 5)
 
-    var a = await fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&hl=vi&locale=vn&regionCode=VN&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`)
+    var a = await fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&hl=vi&locale=vn&regionCode=VN&maxResults=7&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`)
     const videos = (await a.json()).items.map(e => (parseYoutubeVideoData(e)))
     // console.log(videos)
 
@@ -184,7 +184,7 @@ class HomePage extends React.Component {
 
         {/* Youtube */}
         <Row>
-          <Col className="col-lg mb-4 text-center" key={`container-yt-trend`}>
+          <Col className="col-lg mb-3 text-center" key={`container-yt-trend`}>
             <img
               height="200"
               width="320"
@@ -193,9 +193,9 @@ class HomePage extends React.Component {
           </Col>
 
           {videos.map(video => (
-            <Col className="col-lg mb-4" key={`container-${video.id}`}>
-              <Card small className="card-post mb-4">
-                <CardBody>
+            <Col className="col-lg mb-3" key={`container-${video.id}`}>
+              <Card small className="card-post" style={{ maxWidth: '426px' }}>
+                <CardBody style={{ padding: '0' }}>
                   <YouTube
                     key={video.id}
                     videoId={video.videoId}
@@ -219,11 +219,11 @@ class HomePage extends React.Component {
                       <small className="text-muted">{`Views: ${video.viewCount}`}</small>
                     </div>
                   </div>
-                  <div className="my-auto ml-auto">
+                  {/* <div className="my-auto ml-auto">
                     <Button size="sm" theme="white">
                       <i className="far fa-bookmark mr-1" /> Bookmark
                     </Button>
-                  </div>
+                  </div> */}
                 </CardFooter>
               </Card>
             </Col>
