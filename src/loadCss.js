@@ -8,8 +8,6 @@ export default () => {
     mIconsLink.type = "text/css";
     mIconsLink.rel = "stylesheet";
 
-    console.log('load external css')
-
     head.appendChild(mIconsLink);
 }
 
